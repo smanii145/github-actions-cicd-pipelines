@@ -1,4 +1,4 @@
-name: Build & deploy python app
+name: Build & deploy python applications
 
 on:
   push:
