@@ -1,3 +1,1 @@
-unittests
-flask
-requests
+# No additional dependencies
