@@ -1,0 +1,33 @@
+name: Build & deploy python app
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    name: Build & deploy python application
+    runs-on: ubuntu-latest  # This specifies the OS for the runner (Ubuntu in this case)
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.2.2  # This checks out your code
+
+      - name: Setup Python
+        uses: actions/setup-python@v5.3.0  # This sets up Python (version 3.11)
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # This installs dependencies if they exist
+
+      - name: Run Unit Tests
+        run: |
+          python -m unittest test_app.py  # This runs the tests in test_app.py
+
+
+         
+     
+    
